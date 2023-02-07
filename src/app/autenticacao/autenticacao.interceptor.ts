@@ -13,10 +13,8 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
   ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log('ashduishauia')
     if (this.tokenService.possuiToken()) {
       const token = this.tokenService.retornaToken();
-      console.log('aaaa', token);
       const headers = new HttpHeaders().append('x-access-token', token);
       request = request.clone({ headers });
     }

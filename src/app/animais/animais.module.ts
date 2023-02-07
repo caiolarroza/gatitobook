@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ReactiveFormsModule } from '@angular/forms';
 import { CartaoModule } from '../componentes/cartao/cartao.module';
-import { MensagemModule } from '../componentes/mensagem/mensagem.module';
+import { SharedModule } from '../shared/shared.module';
 import { AnimaisRoutingModule } from './animais-routing.module';
 import { AnimalComponent } from './animal/animal.component';
 import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.component';
@@ -24,8 +23,7 @@ import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
     CommonModule,
     AnimaisRoutingModule,
     CartaoModule,
-    MensagemModule,
-    ReactiveFormsModule
+    SharedModule
   ]
 })
 export class AnimaisModule { }

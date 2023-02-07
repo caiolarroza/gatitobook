@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   login(aaa: any): void {
-    console.log('aaa', aaa);
     console.log('this.usuario', this.usuario);
     console.log('this.senha', this.senha);
     this.authService.autenticar(this.usuario, this.senha).subscribe(

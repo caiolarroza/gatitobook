@@ -4,7 +4,7 @@ import {
   RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, take } from 'rxjs/operators';
 import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
 import { Animais } from '../animais';
 import { AnimaisService } from '../animais.service';
@@ -24,7 +24,8 @@ export class ListaAnimaisResolver implements Resolve<Animais> {
       switchMap((usuario) => {
         const userName = usuario.name ?? '';
         return this.animaisService.listaDoUsuario(userName);
-      })
+      }),
+      take(1)
     );
   }
 }
